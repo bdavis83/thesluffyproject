@@ -7,16 +7,18 @@ from .serializer import SkiResortSerializer
 from django.shortcuts import get_object_or_404
 
 @api_view (['GET'])
+@permission_classes([AllowAny])
 def get_all_ski_resorts(request):
     ski_resorts = SkiResort.objects.all()
     serializer = SkiResortSerializer(ski_resorts, many=True)
     return Response(serializer.data)
 
-@api_view (['POST'])
-def add_ski_resort(request):
-    if request.method == 'POST':
+@api_view(['POST'])
+@permission_classes([AllowAny])
+def add_ski_resort (request):
+    if request.method=='POST':
         serializer = SkiResortSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response (serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
