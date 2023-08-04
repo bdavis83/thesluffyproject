@@ -47,7 +47,7 @@ const LeafletMap = () => {
           position={[resort.latitude, resort.longitude]}
           icon={customIcon}
         >
-          <Popup>{resort.title}</Popup>
+          <Popup>{resort.name}</Popup>
         </Marker>
       ))}
     </MapContainer>
