@@ -1,10 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import { Icon } from "leaflet";
 import axios from "axios";
 import "leaflet/dist/leaflet.css";
+import icon from "leaflet/dist/images/marker-icon.png";
+import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 const LeafletMap = () => {
   const [skiResort, setSkiResort] = useState([]);
+
+  const customIcon = new L.Icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41],
+  });
 
   async function fetchSkiResorts() {
     try {
@@ -28,7 +42,11 @@ const LeafletMap = () => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {skiResort.map((resort) => (
-        <Marker key={resort.id} position={[resort.latitude, resort.longitude]}>
+        <Marker
+          key={resort.id}
+          position={[resort.latitude, resort.longitude]}
+          icon={customIcon}
+        >
           <Popup>{resort.title}</Popup>
         </Marker>
       ))}
