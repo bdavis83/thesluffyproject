@@ -4,7 +4,7 @@ import "./App.css";
 //Page Imports
 import HomePage from "./pages/HomePage";
 import WeatherMap from "./pages/WeatherMap";
-import Passes from "./pages/Passes";
+import PassType from "./pages/PassType";
 import Regions from "./pages/Regions";
 import IndependantResorts from "./pages/IndependantResorts";
 //Component Imports
@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/weathermap" element={<WeatherMap />} />
         <Route path="/regions" element={<Regions />} />
-        <Route path="/passes" element={<Passes />} />
+        <Route path="/passtype" element={<PassType />} />
         <Route path="/independantresorts" element={<IndependantResorts />} />
       </Routes>
     </div>
