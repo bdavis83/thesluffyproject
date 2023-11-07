@@ -1,4 +1,9 @@
-import { Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Switch,
+} from "react-router-dom";
 import "./App.css";
 
 //Page Imports
@@ -9,7 +14,7 @@ import Regions from "./pages/Regions";
 import IndependantResorts from "./pages/IndependantResorts";
 //Component Imports
 
-import Navbar from "./components/NavBar/NavBar";
+import Navbar from "./components/NavBar";
 
 function App() {
   return (
