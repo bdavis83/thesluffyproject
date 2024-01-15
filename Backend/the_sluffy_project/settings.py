@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'ski_resorts'
+    'ski_resorts',
+    
 ]
 
 MIDDLEWARE = [

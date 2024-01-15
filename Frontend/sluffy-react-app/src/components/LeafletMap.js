@@ -56,6 +56,8 @@ const LeafletMap = () => {
               {resort.region}
               <br />
               {resort.pass_type}
+              <br />
+              Weather: {JSON.stringify(resort.weather_data)}
             </div>
           </Popup>
         </Marker>

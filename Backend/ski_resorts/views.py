@@ -4,8 +4,9 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework import status
 from .models import SkiResort
 from .serializer import SkiResortSerializer
+from .utils import get_weather_data
 
-@api_view(['GET', 'POST'])  # Allow both GET and POST requests for this view
+@api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def ski_resorts_view(request):
     if request.method == 'GET':
@@ -16,8 +17,16 @@ def ski_resorts_view(request):
 @api_view(['GET'])
 def get_all_ski_resorts(request):
     ski_resorts = SkiResort.objects.all()
-    serializer = SkiResortSerializer(ski_resorts, many=True)
-    return Response(serializer.data)
+    serialized_data = []
+
+    for resort in ski_resorts:
+        weather_data = resort.get_weather()
+        serializer = SkiResortSerializer(resort)
+        data = serializer.data
+        data['weather_data'] = weather_data
+        serialized_data.append(data)
+
+    return Response(serialized_data)
 
 @api_view(['POST'])
 def add_ski_resort(request):
