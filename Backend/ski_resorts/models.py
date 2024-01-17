@@ -20,6 +20,7 @@ class SkiResort (models.Model):
     trails = models.DecimalField(max_digits=4, decimal_places=0)
     country = models.CharField(max_length=255)
     continent = models.CharField(max_length=255)
+    weather_data = models.JSONField(null=True)
     
     def get_weather(self):
         weather_data = get_weather_data(self.latitude, self.longitude)

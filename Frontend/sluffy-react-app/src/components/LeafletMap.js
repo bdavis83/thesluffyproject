@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import DisplayForecastPage from "../pages/DisplayForecastPage";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import { Icon } from "leaflet";
@@ -57,7 +59,7 @@ const LeafletMap = () => {
               <br />
               {resort.pass_type}
               <br />
-              Weather: {JSON.stringify(resort.weather_data)}
+              <Link to={`/forecast/${resort.id}`}>Weather Forecast</Link>
             </div>
           </Popup>
         </Marker>

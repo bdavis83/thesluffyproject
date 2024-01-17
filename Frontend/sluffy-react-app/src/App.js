@@ -12,6 +12,7 @@ import WeatherMap from "./pages/WeatherMap";
 import PassType from "./pages/PassType";
 import Regions from "./pages/Regions";
 import IndependantResorts from "./pages/IndependantResorts";
+import DisplayForecastPage from "./pages/DisplayForecastPage";
 //Component Imports
 
 import Navbar from "./components/NavBar";
@@ -27,6 +28,7 @@ function App() {
         <Route path="/regions" element={<Regions />} />
         <Route path="/passtype" element={<PassType />} />
         <Route path="/independantresorts" element={<IndependantResorts />} />
+        <Route path="forecast/:resortId" element={<DisplayForecastPage />} />
       </Routes>
     </div>
   );
