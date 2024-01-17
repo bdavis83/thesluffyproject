@@ -6,5 +6,5 @@ urlpatterns = [
     path('all/', views.get_all_ski_resorts),
     path('add/', views.add_ski_resort),
     path('<int:pk>/', views.get_single_ski_resort),
-    path('weather/<int:pk>', views.get_weather_data),  # Add parameter for resort ID
+    path('weather/<int:pk>', views.get_ski_resort_weather),  # Add parameter for resort ID
 ]

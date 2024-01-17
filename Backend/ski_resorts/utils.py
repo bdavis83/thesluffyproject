@@ -23,8 +23,10 @@ def get_weather_data(latitude, longitude):
                     relevant_info.append({
                         'startTime': period.get('startTime', ''),
                         'temperature': period.get('temperature', ''),
-                        'precipitation': period.get('precipitation', ''),
+                        'shortForecast': period.get('shortForecast', ''),  # 'Mostly Sunny'
+                        'detailedForecast': period.get('detailedForecast', ''),
                         'wind': period.get('windSpeed', ''),
+                        'windDirection': period.get('windDirection', ''),
                     })
 
                 return relevant_info
@@ -38,3 +40,13 @@ def get_weather_data(latitude, longitude):
         print(f"An error occurred: {e}")
         return None
 
+def get_single_resort_weather(resort_id, latitude, longitude):
+    weather_data = get_weather_data(latitude, longitude)
+
+    if weather_data is None:
+        return None
+
+    return {
+        'resort_id': resort_id,
+        'weather_data': weather_data
+    }

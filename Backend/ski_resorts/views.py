@@ -46,7 +46,7 @@ def get_ski_resort_weather(request, pk):
     except SkiResort.DoesNotExist:
         return Response({"error": "Ski resort not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    weather_data = ski_resort.get_weather()
+    weather_data = get_weather_data(ski_resort.latitude, ski_resort.longitude)
     serializer = SkiResortSerializer(ski_resort)
     data = serializer.data
     data['weather_data'] = weather_data
