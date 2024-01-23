@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="nav-logo" onClick={closeMobileMenu}>
+      <Link to="/" className="nav-links" onClick={closeMobileMenu}>
         <b>sluffy</b>
       </Link>
       <div className="menu-icon" onClick={handleClick}>
@@ -56,16 +56,6 @@ const Navbar = () => {
           {dropdown && <Dropdown />}
         </li>
 
-        <li
-          className="nav-item"
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}
-        >
-          <Link to="/passtype/" className="nav-links" onClick={closeMobileMenu}>
-            <p>Passes</p>
-          </Link>
-          {dropdown && <Dropdown />}
-        </li>
         <li className="nav-item">
           <Link
             to="/independantresorts/"
@@ -73,6 +63,26 @@ const Navbar = () => {
             onClick={closeMobileMenu}
           >
             <p>Independant Resorts</p>
+          </Link>
+          {dropdown && <Dropdown />}
+        </li>
+        <li className="nav-item">
+          <Link
+            to="/ikon-pass/"
+            className="nav-links"
+            onClick={closeMobileMenu}
+          >
+            <p>Ikon Pass</p>
+          </Link>
+          {dropdown && <Dropdown />}
+        </li>
+        <li className="nav-item">
+          <Link
+            to="/epic-pass/"
+            className="nav-links"
+            onClick={closeMobileMenu}
+          >
+            <p>Epic Pass</p>
           </Link>
           {dropdown && <Dropdown />}
         </li>

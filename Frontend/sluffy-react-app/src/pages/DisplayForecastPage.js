@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import "./DisplayForecastPage.css";
 const DisplayForecastPage = () => {
   const { resortId } = useParams();
   const [weatherData, setWeatherData] = useState(null);

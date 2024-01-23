@@ -7,13 +7,24 @@
   font-size: 1.2rem;
 }
 
-.navbar-logo {
-  color: #fff;
+.navbar .navbar-logo {
+  color: #fff !important;
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
-  text-decoration: none;
+  text-decoration: none; /* Remove underlining */
   font-size: 2rem;
+}
+
+/* Add the following styles for :active and :visited states */
+.navbar .navbar-logo:active,
+.navbar .navbar-logo:visited {
+  color: #fff !important;
+}
+
+.fa-firstdraft {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
 }
 
 .fa-firstdraft {

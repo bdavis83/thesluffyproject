@@ -1,0 +1,28 @@
+/* DisplayForecastPage.css */
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.weatherContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.periodContainer {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.detail {
+  margin: 5px 0;
+}
