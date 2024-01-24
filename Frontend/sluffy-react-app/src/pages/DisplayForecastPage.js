@@ -87,7 +87,7 @@ const DisplayForecastPage = () => {
     <div>
       <h1>Weather Forecast</h1>
       <div>
-        {weatherData.properties.periods.map((period, index) => (
+        {weatherData?.properties?.periods.map((period, index) => (
           <WeatherCard key={index} period={period} />
         ))}
       </div>
